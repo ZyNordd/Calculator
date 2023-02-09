@@ -13,6 +13,13 @@ Calculator::~Calculator()
     delete ui;
 }
 
+void Calculator::on_pushButton_1_clicked() {
+    variable.push_back(1);
+    //ui->text_1var->document()->setPlainText("1");
+}
+
 void Calculator::on_pushButton_equal_clicked() {
-    QMessageBox::information(this, QString("Shaseasd"), ui->comboBox->currentText());
+    int hui = ui->comboBox->currentText().toInt();
+
+    QMessageBox::information(this, QString("Shaseasd"), QString::number(hui));
 }
