@@ -23,7 +23,15 @@ private:
     void show_var();
     double make_var(int system, std::string number);
     void save_first();
+    void save_second();
     double first_var = 0;
+    double second_var = 0;
+    double answer = 0;
+    int operation_type = 0; 
+    //1 - сложение
+    //2 - вычитание
+    //3 - умножение
+    //4 - деление
     std::string variable;
     Ui::Calculator *ui;
 
@@ -48,9 +56,9 @@ private slots:
     void on_pushButton_AC_clicked();
     void on_pushButton_delete_clicked();
     void on_pushButton_plus_clicked();
-    //void on_pushButton_minus_clicked();
-    //void on_pushButton_multiply_clicked();
-    //void on_pushButton_divide_clicked();
+    void on_pushButton_minus_clicked();
+    void on_pushButton_multiply_clicked();
+    void on_pushButton_divide_clicked();
     void on_pushButton_point_clicked();
     void on_pushButton_equal_clicked();
 };

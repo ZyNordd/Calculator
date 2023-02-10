@@ -62,7 +62,15 @@ double Calculator::make_var(int system, std::string number) {
 }
 
 void Calculator::save_first() {
+    first_var = make_var(ui->comboBox->currentText().toInt(), variable);
+    ui->text_1var->setText("");
+    variable = "";
+}
 
+void Calculator::save_second() {
+    second_var = make_var(ui->comboBox->currentText().toInt(), variable);
+    ui->text_1var->setText("");
+    variable = "";
 }
 
 void Calculator::on_pushButton_1_clicked() {
@@ -157,7 +165,23 @@ void Calculator::on_pushButton_delete_clicked() {
 }
 
 void Calculator::on_pushButton_plus_clicked() {
+    save_first();
+    operation_type = 1;
+}
 
+void Calculator::on_pushButton_minus_clicked() {
+    save_first();
+    operation_type = 2;
+}
+
+void Calculator::on_pushButton_multiply_clicked() {
+    save_first();
+    operation_type = 3;
+}
+
+void Calculator::on_pushButton_divide_clicked() {
+    save_first();
+    operation_type = 4;
 }
 
 void Calculator::on_pushButton_point_clicked() {
@@ -166,8 +190,16 @@ void Calculator::on_pushButton_point_clicked() {
 }
 
 void Calculator::on_pushButton_equal_clicked() {
-    int hui = ui->comboBox->currentText().toInt();
-    make_var(ui->comboBox->currentText().toInt(), variable);
-    //
-    QMessageBox::information(this, QString("Shaseasd"), QString::number(make_var(ui->comboBox->currentText().toInt(), variable)));
+    save_second();
+    switch (operation_type) {
+    case 1:
+        answer = first_var + second_var;
+    case 2:
+        answer = first_var - second_var;
+    case 3:
+        answer = first_var * second_var;
+    case 4:
+        answer = first_var / second_var;
+    }
+    QMessageBox::information(this, QString("Shaseasd"), QString::number(answer));
 }
