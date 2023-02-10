@@ -20,15 +20,31 @@ void Calculator::show_var() {
     ui->text_1var->setText(QString::fromStdString(str));
 }
 
-int Calculator::make_var(int system, std::vector<char> number) {
-    std::vector<int> tmp;
+double Calculator::make_var(int system, std::vector<char> number) {
+    std::vector<int> integer;
+    std::vector<int> fractional;
+    bool isInt = true;
     for (int i = 0; i < number.size(); ++i) {
-        tmp.push_back((int)number[i] - 48);
+        if (number[i] == ',' || number[i] == '.') {
+            isInt = false;
+            continue;
+        }
+        if (isInt) {
+            integer.push_back((int)number[i] - 48);
+        }
+        else {
+            fractional.push_back((int)number[i] - 48);
+        }
     }
-    std::reverse(tmp.begin(), tmp.end());
-    int var = 0;
-    for (int i = 0; i < tmp.size(); ++i) {
-        var += (tmp[i] * pow(system, i));
+    std::reverse(integer.begin(), integer.end());
+    double var = 0;
+    for (int i = 0; i < integer.size(); ++i) {
+        var += (integer[i] * pow(system, i));
+    }
+    if (!isInt) {
+        for (int i = 0; i < fractional.size(); ++i) {
+            var += (fractional[i] * pow(system, -(i + 1)));
+        }
     }
     return var;
 }
@@ -126,6 +142,11 @@ void Calculator::on_pushButton_delete_clicked() {
 
 void Calculator::on_pushButton_plus_clicked() {
 
+}
+
+void Calculator::on_pushButton_point_clicked() {
+    variable.push_back('.');
+    show_var();
 }
 
 void Calculator::on_pushButton_equal_clicked() {

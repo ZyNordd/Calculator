@@ -21,8 +21,8 @@ public:
 
 private:
     void show_var();
-    int make_var(int system, std::vector<char> number);
-    int var = 0;
+    double make_var(int system, std::vector<char> number);
+    //int var = 0;
     std::vector<char> variable;
     Ui::Calculator *ui;
 
@@ -46,10 +46,11 @@ private slots:
     void on_pushButton_0_clicked();
     void on_pushButton_AC_clicked();
     void on_pushButton_delete_clicked();
-    //void on_pushButton_plus_clicked();
+    void on_pushButton_plus_clicked();
     //void on_pushButton_minus_clicked();
     //void on_pushButton_multiply_clicked();
     //void on_pushButton_divide_clicked();
+    void on_pushButton_point_clicked();
     void on_pushButton_equal_clicked();
 };
 #endif // CALCULATOR_H
