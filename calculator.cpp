@@ -14,13 +14,13 @@ Calculator::~Calculator()
 }
 
 void Calculator::show_var() {
-    std::vector<char> real_var(variable);
+    //std::vector<char> real_var(variable);
     //std::reverse(real_var.begin(), real_var.end());
-    std::string str(real_var.begin(), real_var.end());
-    ui->text_1var->setText(QString::fromStdString(str));
+    //std::string str(real_var.begin(), real_var.end());
+    ui->text_1var->setText(QString::fromStdString(variable));
 }
 
-double Calculator::make_var(int system, std::vector<char> number) {
+double Calculator::make_var(int system, std::string number) {
     std::vector<int> integer;
     std::vector<int> fractional;
     bool isInt = true;
@@ -30,10 +30,22 @@ double Calculator::make_var(int system, std::vector<char> number) {
             continue;
         }
         if (isInt) {
-            integer.push_back((int)number[i] - 48);
+            if (number[i] == 'A') integer.push_back(10);
+            else if (number[i] == 'B') integer.push_back(11);
+            else if (number[i] == 'C') integer.push_back(12);
+            else if (number[i] == 'D') integer.push_back(13);
+            else if (number[i] == 'E') integer.push_back(14);
+            else if (number[i] == 'F') integer.push_back(15);
+            else integer.push_back((int)number[i] - 48);
         }
         else {
-            fractional.push_back((int)number[i] - 48);
+            if (number[i] == 'A') fractional.push_back(10);
+            else if (number[i] == 'B') fractional.push_back(11);
+            else if (number[i] == 'C') fractional.push_back(12);
+            else if (number[i] == 'D') fractional.push_back(13);
+            else if (number[i] == 'E') fractional.push_back(14);
+            else if (number[i] == 'F') fractional.push_back(15);
+            else fractional.push_back((int)number[i] - 48);
         }
     }
     std::reverse(integer.begin(), integer.end());

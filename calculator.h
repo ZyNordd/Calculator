@@ -21,9 +21,9 @@ public:
 
 private:
     void show_var();
-    double make_var(int system, std::vector<char> number);
+    double make_var(int system, std::string number);
     //int var = 0;
-    std::vector<char> variable;
+    std::string variable;
     Ui::Calculator *ui;
 
 private slots:
