@@ -61,6 +61,10 @@ double Calculator::make_var(int system, std::string number) {
     return var;
 }
 
+void Calculator::save_first() {
+
+}
+
 void Calculator::on_pushButton_1_clicked() {
     variable.push_back('1');
     show_var();
