@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QMainWindow>
+#include <algorithm>
+#include <cmath>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Calculator; }
@@ -18,34 +20,36 @@ public:
     ~Calculator();
 
 private:
-    int variable = 0;
-    std::vector<int> variable;
+    void show_var();
+    int make_var(int system, std::vector<char> number);
+    int var = 0;
+    std::vector<char> variable;
     Ui::Calculator *ui;
 
 private slots:
-    void on_pushButton_equal_clicked();
+
     void on_pushButton_1_clicked();
-    //void on_pushButton_2_clicked();
-    //void on_pushButton_3_clicked();
-    //void on_pushButton_4_clicked();
-    //void on_pushButton_5_clicked();
-    //void on_pushButton_6_clicked();
-    //void on_pushButton_7_clicked();
-    //void on_pushButton_8_clicked();
-    //void on_pushButton_9_clicked();
-    //void on_pushButton_A_clicked();
-    //void on_pushButton_B_clicked();
-    //void on_pushButton_C_clicked();
-    //void on_pushButton_D_clicked();
-    //void on_pushButton_E_clicked();
-    //void on_pushButton_F_clicked();
-    //void on_pushButton_0_clicked();
-    //void on_pushButton_AC_clicked();
-    //void on_pushButton_delete_clicked();
-    //void on_pushButton_divide_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_4_clicked();
+    void on_pushButton_5_clicked();
+    void on_pushButton_6_clicked();
+    void on_pushButton_7_clicked();
+    void on_pushButton_8_clicked();
+    void on_pushButton_9_clicked();
+    void on_pushButton_A_clicked();
+    void on_pushButton_B_clicked();
+    void on_pushButton_C_clicked();
+    void on_pushButton_D_clicked();
+    void on_pushButton_E_clicked();
+    void on_pushButton_F_clicked();
+    void on_pushButton_0_clicked();
+    void on_pushButton_AC_clicked();
+    void on_pushButton_delete_clicked();
     //void on_pushButton_plus_clicked();
     //void on_pushButton_minus_clicked();
     //void on_pushButton_multiply_clicked();
-
+    //void on_pushButton_divide_clicked();
+    void on_pushButton_equal_clicked();
 };
 #endif // CALCULATOR_H
