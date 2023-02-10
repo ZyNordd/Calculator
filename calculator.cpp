@@ -76,7 +76,6 @@ void Calculator::save_second() {
 void Calculator::on_pushButton_1_clicked() {
     variable.push_back('1');
     show_var();
-    //ui->text_1var->document()->setPlainText("1");
 }
 
 void Calculator::on_pushButton_2_clicked() {
@@ -194,12 +193,17 @@ void Calculator::on_pushButton_equal_clicked() {
     switch (operation_type) {
     case 1:
         answer = first_var + second_var;
+        break;
     case 2:
         answer = first_var - second_var;
+        break;
     case 3:
         answer = first_var * second_var;
+        break;
     case 4:
         answer = first_var / second_var;
+        break;
     }
-    QMessageBox::information(this, QString("Shaseasd"), QString::number(answer));
+    ui->text_1var->setText(QString::number(answer));
+    QMessageBox::information(this, QString("Shaseasd"), QString::number(first_var) + " " + QString::number(second_var) + " " + QString::number(answer));
 }
