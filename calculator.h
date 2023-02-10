@@ -22,7 +22,8 @@ public:
 private:
     void show_var();
     double make_var(int system, std::string number);
-    //int var = 0;
+    void save_first();
+    double first_var = 0;
     std::string variable;
     Ui::Calculator *ui;
 
