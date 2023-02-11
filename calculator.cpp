@@ -19,7 +19,6 @@ void Calculator::onTextEdit(const QString& text) {
     //QMessageBox::information(this, text, text);
 }
 
-
 double Calculator::make_var(int system, QString numberQstring) {
     std::string number = numberQstring.toStdString();
     std::vector<int> integer;
@@ -228,6 +227,9 @@ void Calculator::on_pushButton_equal_clicked() {
     case 4:
         answer = first_var / second_var;
         break;
+    case 0:
+        answer = second_var;
+        break;
     }
     ui->text_1var->setText(QString::number(answer));
     QMessageBox::information(this, QString("Shaseasd"), QString::number(first_var) + " " + QString::number(second_var) + " " + QString::number(answer));
@@ -237,7 +239,6 @@ void Calculator::on_pushButton_equal_clicked() {
     second_var = 0;
     answer = 0;
 }
-
 
 void Calculator::on_pushButton_ChangeSign_clicked() {
     if (!var_sign) {
