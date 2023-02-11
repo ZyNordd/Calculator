@@ -1,34 +1,58 @@
 #include "calculator.h"
 #include "./ui_calculator.h"
 
-
 Calculator::Calculator(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Calculator)
 {
     ui->setupUi(this);
     connect(ui->comboBox, &QComboBox::textActivated, this, &Calculator::buttonControl);
-
+    buttonControl();
 }
 
 void Calculator::buttonControl() {
-    switch (ui->comboBox->currentText().toInt()) {
+    /*switch (ui->comboBox->currentText().toInt()) {
     case 2:
         ui->pushButton_2->setEnabled(false);
         break;
     case 3:
         ui->pushButton_3->setEnabled(false);
         break;
-    }
+    }*/
+    if (ui->comboBox->currentText().toInt() > 2) ui->pushButton_2->setEnabled(true);
+    else ui->pushButton_2->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 3) ui->pushButton_3->setEnabled(true);
+    else ui->pushButton_3->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 4) ui->pushButton_4->setEnabled(true);
+    else ui->pushButton_4->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 5) ui->pushButton_5->setEnabled(true);
+    else ui->pushButton_5->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 6) ui->pushButton_6->setEnabled(true);
+    else ui->pushButton_6->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 7) ui->pushButton_7->setEnabled(true);
+    else ui->pushButton_7->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 8) ui->pushButton_8->setEnabled(true);
+    else ui->pushButton_8->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 9) ui->pushButton_9->setEnabled(true);
+    else ui->pushButton_9->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 10) ui->pushButton_A->setEnabled(true);
+    else ui->pushButton_A->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 11) ui->pushButton_B->setEnabled(true);
+    else ui->pushButton_B->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 12) ui->pushButton_C->setEnabled(true);
+    else ui->pushButton_C->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 13) ui->pushButton_D->setEnabled(true);
+    else ui->pushButton_D->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 14) ui->pushButton_E->setEnabled(true);
+    else ui->pushButton_E->setEnabled(false);
+    if (ui->comboBox->currentText().toInt() > 15) ui->pushButton_F->setEnabled(true);
+    else ui->pushButton_F->setEnabled(false);
 }
-
 
 Calculator::~Calculator()
 {
     delete ui;
 }
-
-
 
 double Calculator::make_var(int system, QString numberQstring) {
     std::string number = numberQstring.toStdString();
@@ -41,6 +65,13 @@ double Calculator::make_var(int system, QString numberQstring) {
     for (int i = startingPoint; i < number.size(); ++i) {
         if (std::find(validValues.begin(), validValues.end(), number[i]) == validValues.end()) {           
             invalidSymbol = 1;
+            return NULL;
+        }
+    }
+
+    for (int i = startingPoint; i < number.size(); ++i) {
+        if (std::find(validDigit.begin(), (validDigit.end() - (16 - system)), number[i]) == validDigit.end()) {
+            invalidDigit = 1;
             return NULL;
         }
     }
@@ -87,6 +118,11 @@ void Calculator::save_first() {
     first_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
     if (invalidSymbol) {
         QMessageBox::information(this, QString("Shaseasd"), QString("Used invalid symbol"));
+        on_pushButton_AC_clicked();
+        return;
+    }
+    if (invalidDigit) {
+        QMessageBox::information(this, QString("Shaseasd"), QString("Used invalid digit"));
         on_pushButton_AC_clicked();
         return;
     }
@@ -176,6 +212,7 @@ void Calculator::on_pushButton_AC_clicked() {
     second_var = 0;
     answer = 0;
     invalidSymbol = 0;
+    invalidDigit = 0;
 }
 
 void Calculator::on_pushButton_delete_clicked() {
@@ -236,6 +273,8 @@ void Calculator::on_pushButton_equal_clicked() {
     first_var = 0;
     second_var = 0;
     answer = 0;
+    invalidSymbol = 0;
+    invalidDigit = 0;
 }
 
 void Calculator::on_pushButton_ChangeSign_clicked() {

@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <algorithm>
 #include <cmath>
+#include <cctype>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Calculator; }
@@ -24,12 +25,15 @@ private:
     void save_first();
     void save_second();
     bool var_sign = 0;
+    bool invalidDigit = 0;
     bool invalidSymbol = 0;
     //0 - plus
     //1 - minus
     double first_var = 0;
     double second_var = 0;
     double answer = 0;
+    const std::vector<char> validDigit = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
+        'A', 'B', 'C', 'D', 'E', 'F'};
     const std::vector<char> validValues = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
         'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F' };
     int operation_type = 0; 
