@@ -7,7 +7,6 @@ Calculator::Calculator(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->text_1var, &QLineEdit::textChanged, this, &Calculator::onTextEdit);
 }
 
 Calculator::~Calculator()
@@ -15,9 +14,6 @@ Calculator::~Calculator()
     delete ui;
 }
 
-void Calculator::onTextEdit(const QString& text) {
-    //QMessageBox::information(this, text, text);
-}
 
 double Calculator::make_var(int system, QString numberQstring) {
     std::string number = numberQstring.toStdString();
