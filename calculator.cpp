@@ -29,6 +29,10 @@ double Calculator::make_var(int system, QString numberQstring) {
     if (number[0] == '-') startingPoint = 1;
 
     for (int i = startingPoint; i < number.size(); ++i) {
+
+    }
+
+    for (int i = startingPoint; i < number.size(); ++i) {
         if (number[i] == ',' || number[i] == '.') {
             isInt = false;
             continue;

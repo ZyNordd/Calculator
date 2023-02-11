@@ -29,6 +29,8 @@ private:
     double first_var = 0;
     double second_var = 0;
     double answer = 0;
+    const std::vector<char> validValues = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+        'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F' };
     int operation_type = 0; 
     //1 - сложение
     //2 - вычитание
