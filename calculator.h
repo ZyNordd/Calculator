@@ -23,6 +23,9 @@ private:
     double make_var(int system, QString number);
     void save_first();
     void save_second();
+    bool var_sign = 0;
+    //0 - plus
+    //1 - minus
     double first_var = 0;
     double second_var = 0;
     double answer = 0;
@@ -59,5 +62,6 @@ private slots:
     void on_pushButton_divide_clicked();
     void on_pushButton_point_clicked();
     void on_pushButton_equal_clicked();
+    void on_pushButton_ChangeSign_clicked();
 };
 #endif // CALCULATOR_H

@@ -67,16 +67,17 @@ double Calculator::make_var(int system, QString numberQstring) {
 
 void Calculator::save_first() {
     first_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
-
-    if (operation_type == 2) {
+    if (var_sign) {
         first_var *= (-1);
     }
-
     ui->text_1var->setText("");
 }
 
 void Calculator::save_second() {
     second_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
+    if (var_sign) {
+        second_var *= (-1);
+    }
     ui->text_1var->setText("");
 }
 
@@ -154,32 +155,38 @@ void Calculator::on_pushButton_delete_clicked() {
 
 void Calculator::on_pushButton_plus_clicked() {
     save_first();
+    var_sign = 0;
     operation_type = 1;
 }
 
 void Calculator::on_pushButton_minus_clicked() {
-    if (operation_type == 2) {
-        save_first();
-    }
-    else {
-        if (ui->text_1var->text() != "") {
-            operation_type = 2;
-            save_first();
-        }
-        else {
-            operation_type = 2;
-            ui->text_1var->setText(ui->text_1var->text() + "-");
-        }
-    }
+    //if (operation_type == 2) {
+    //    save_first();
+    //}
+    //else {
+    //    if (ui->text_1var->text() != "") {
+    //        operation_type = 2;
+    //        save_first();
+    //    }
+    //    else {
+    //        operation_type = 2;
+    //        ui->text_1var->setText(ui->text_1var->text() + "-");
+    //    }
+    //}
+    save_first();
+    var_sign = 0;
+    operation_type = 2;
 }
 
 void Calculator::on_pushButton_multiply_clicked() {
     save_first();
+    var_sign = 0;
     operation_type = 3;
 }
 
 void Calculator::on_pushButton_divide_clicked() {
     save_first();
+    var_sign = 0;
     operation_type = 4;
 }
 
@@ -206,4 +213,20 @@ void Calculator::on_pushButton_equal_clicked() {
     ui->text_1var->setText(QString::number(answer));
     QMessageBox::information(this, QString("Shaseasd"), QString::number(first_var) + " " + QString::number(second_var) + " " + QString::number(answer));
     operation_type = 0;
+    var_sign = 0;
+    first_var = 0;
+    second_var = 0;
+    answer = 0;
+}
+
+
+void Calculator::on_pushButton_ChangeSign_clicked() {
+    if (!var_sign) {
+        ui->text_1var->setText("-" + ui->text_1var->text());
+        var_sign = 1;
+    }
+    else {
+        ui->text_1var->setText(ui->text_1var->text().remove(0,1));
+        var_sign = 0;
+    }
 }
