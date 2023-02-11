@@ -73,104 +73,82 @@ void Calculator::save_first() {
     }
 
     ui->text_1var->setText("");
-    variable = "";
 }
 
 void Calculator::save_second() {
     second_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
     ui->text_1var->setText("");
-    variable = "";
 }
 
 void Calculator::on_pushButton_1_clicked() {
-    variable.push_back('1');
     ui->text_1var->setText(ui->text_1var->text() + "1");
 }
 
 void Calculator::on_pushButton_2_clicked() {
-    variable.push_back('2');
     ui->text_1var->setText(ui->text_1var->text() + "2");
 }
 
 void Calculator::on_pushButton_3_clicked() {
-    variable.push_back('3');
     ui->text_1var->setText(ui->text_1var->text() + "3");
 }
 
 void Calculator::on_pushButton_4_clicked() {
-    variable.push_back('4');
     ui->text_1var->setText(ui->text_1var->text() + "4");
 }
 
 void Calculator::on_pushButton_5_clicked() {
-    variable.push_back('5');
     ui->text_1var->setText(ui->text_1var->text() + "5");
 }
 
 void Calculator::on_pushButton_6_clicked() {
-    variable.push_back('6');
     ui->text_1var->setText(ui->text_1var->text() + "6");
 }
 
 void Calculator::on_pushButton_7_clicked() {
-    variable.push_back('7');
     ui->text_1var->setText(ui->text_1var->text() + "7");
 }
 
 void Calculator::on_pushButton_8_clicked() {
-    variable.push_back('8');
     ui->text_1var->setText(ui->text_1var->text() + "8");
 }
 
 void Calculator::on_pushButton_9_clicked() {
-    variable.push_back('9');
     ui->text_1var->setText(ui->text_1var->text() + "9");
 }
 
 void Calculator::on_pushButton_A_clicked() {
-    variable.push_back('A');
     ui->text_1var->setText(ui->text_1var->text() + "A");
 }
 
 void Calculator::on_pushButton_B_clicked() {
-    variable.push_back('B');
     ui->text_1var->setText(ui->text_1var->text() + "B");
 }
 
 void Calculator::on_pushButton_C_clicked() {
-    variable.push_back('C');
     ui->text_1var->setText(ui->text_1var->text() + "C");
 }
 
 void Calculator::on_pushButton_D_clicked() {
-    variable.push_back('D');
     ui->text_1var->setText(ui->text_1var->text() + "D");
 }
 
 void Calculator::on_pushButton_E_clicked() {
-    variable.push_back('E');
     ui->text_1var->setText(ui->text_1var->text() + "E");
 }
 
 void Calculator::on_pushButton_F_clicked() {
-    variable.push_back('F');
     ui->text_1var->setText(ui->text_1var->text() + "F");
 }
 
 void Calculator::on_pushButton_0_clicked() {
-    variable.push_back('0');
     ui->text_1var->setText(ui->text_1var->text() + "0");
 }
 
 void Calculator::on_pushButton_AC_clicked() {
-    while(!variable.empty()) variable.pop_back();
     ui->text_1var->clear();
 }
 
 void Calculator::on_pushButton_delete_clicked() {
-    if (!variable.empty()) {
-        variable.pop_back();
-    }
     ui->text_1var->backspace();
 }
 
@@ -206,7 +184,6 @@ void Calculator::on_pushButton_divide_clicked() {
 }
 
 void Calculator::on_pushButton_point_clicked() {
-    variable.push_back('.');
     ui->text_1var->setText(ui->text_1var->text() + "."); 
 }
 
