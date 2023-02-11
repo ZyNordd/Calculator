@@ -29,7 +29,10 @@ double Calculator::make_var(int system, QString numberQstring) {
     if (number[0] == '-') startingPoint = 1;
 
     for (int i = startingPoint; i < number.size(); ++i) {
-
+        if (std::find(validValues.begin(), validValues.end(), number[i]) == validValues.end()) {           
+            invalidSymbol = 1;
+            return NULL;
+        }
     }
 
     for (int i = startingPoint; i < number.size(); ++i) {
@@ -70,7 +73,13 @@ double Calculator::make_var(int system, QString numberQstring) {
 }
 
 void Calculator::save_first() {
+    
     first_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
+    if (invalidSymbol) {
+        QMessageBox::information(this, QString("Shaseasd"), QString("Used invalid symbol"));
+        on_pushButton_AC_clicked();
+        return;
+    }
     if (var_sign) {
         first_var *= (-1);
     }
@@ -156,6 +165,7 @@ void Calculator::on_pushButton_AC_clicked() {
     first_var = 0;
     second_var = 0;
     answer = 0;
+    invalidSymbol = 0;
 }
 
 void Calculator::on_pushButton_delete_clicked() {

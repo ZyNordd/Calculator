@@ -24,6 +24,7 @@ private:
     void save_first();
     void save_second();
     bool var_sign = 0;
+    bool invalidSymbol = 0;
     //0 - plus
     //1 - minus
     double first_var = 0;
