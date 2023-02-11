@@ -6,12 +6,18 @@ Calculator::Calculator(QWidget *parent)
     , ui(new Ui::Calculator)
 {
     ui->setupUi(this);
+
+    //connect(ui->text_1var, &QLineEdit::textChanged, this, &Calculator::onTextEdit);
 }
 
 Calculator::~Calculator()
 {
     delete ui;
 }
+
+//void Calculator::onTextEdit(const QString& text) {
+//    QMessageBox::information(this, text, text);
+//}
 
 void Calculator::show_var() {
     //std::vector<char> real_var(variable);
@@ -159,7 +165,9 @@ void Calculator::on_pushButton_AC_clicked() {
 }
 
 void Calculator::on_pushButton_delete_clicked() {
-    variable.pop_back();
+    if (!variable.empty()) {
+        variable.pop_back();
+    }   
     show_var();
 }
 
