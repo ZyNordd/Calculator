@@ -178,19 +178,6 @@ void Calculator::on_pushButton_plus_clicked() {
 }
 
 void Calculator::on_pushButton_minus_clicked() {
-    //if (operation_type == 2) {
-    //    save_first();
-    //}
-    //else {
-    //    if (ui->text_1var->text() != "") {
-    //        operation_type = 2;
-    //        save_first();
-    //    }
-    //    else {
-    //        operation_type = 2;
-    //        ui->text_1var->setText(ui->text_1var->text() + "-");
-    //    }
-    //}
     save_first();
     var_sign = 0;
     operation_type = 2;
@@ -232,7 +219,7 @@ void Calculator::on_pushButton_equal_clicked() {
         break;
     }
     ui->text_1var->setText(QString::number(answer));
-    QMessageBox::information(this, QString("Shaseasd"), QString::number(first_var) + " " + QString::number(second_var) + " " + QString::number(answer));
+    //QMessageBox::information(this, QString("Shaseasd"), QString::number(first_var) + " " + QString::number(second_var) + " " + QString::number(answer));
     operation_type = 0;
     var_sign = 0;
     first_var = 0;
