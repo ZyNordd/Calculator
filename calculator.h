@@ -31,7 +31,6 @@ private:
     //2 - вычитание
     //3 - умножение
     //4 - деление
-    std::string variable;
     Ui::Calculator *ui;
 
 private slots:
