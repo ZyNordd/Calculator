@@ -147,6 +147,11 @@ void Calculator::on_pushButton_0_clicked() {
 
 void Calculator::on_pushButton_AC_clicked() {
     ui->text_1var->clear();
+    operation_type = 0;
+    var_sign = 0;
+    first_var = 0;
+    second_var = 0;
+    answer = 0;
 }
 
 void Calculator::on_pushButton_delete_clicked() {
