@@ -20,8 +20,7 @@ public:
     ~Calculator();
 
 private:
-    void show_var();
-    double make_var(int system, std::string number);
+    double make_var(int system, QString number);
     void save_first();
     void save_second();
     double first_var = 0;
@@ -36,7 +35,7 @@ private:
     Ui::Calculator *ui;
 
 private slots:
-    /*void onTextEdit(const QString& text);*/
+    void onTextEdit(const QString& text);
     void on_pushButton_1_clicked();
     void on_pushButton_2_clicked();
     void on_pushButton_3_clicked();
