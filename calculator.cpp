@@ -1,18 +1,33 @@
 #include "calculator.h"
 #include "./ui_calculator.h"
 
+
 Calculator::Calculator(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Calculator)
 {
     ui->setupUi(this);
+    connect(ui->comboBox, &QComboBox::textActivated, this, &Calculator::buttonControl);
 
 }
+
+void Calculator::buttonControl() {
+    switch (ui->comboBox->currentText().toInt()) {
+    case 2:
+        ui->pushButton_2->setEnabled(false);
+        break;
+    case 3:
+        ui->pushButton_3->setEnabled(false);
+        break;
+    }
+}
+
 
 Calculator::~Calculator()
 {
     delete ui;
 }
+
 
 
 double Calculator::make_var(int system, QString numberQstring) {

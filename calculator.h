@@ -38,6 +38,7 @@ private:
     //3 - умножение
     //4 - деление
     Ui::Calculator *ui;
+    void buttonControl();
 
 private slots:
     void on_pushButton_1_clicked();
