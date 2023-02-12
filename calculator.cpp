@@ -117,12 +117,12 @@ void Calculator::save_first() {
     
     first_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
     if (invalidSymbol) {
-        QMessageBox::information(this, QString("Shaseasd"), QString("Used invalid symbol"));
+        QMessageBox::information(this, QString("Error!"), QString("Used invalid symbol"));
         on_pushButton_AC_clicked();
         return;
     }
     if (invalidDigit) {
-        QMessageBox::information(this, QString("Shaseasd"), QString("Used invalid digit"));
+        QMessageBox::information(this, QString("Error!"), QString("Used invalid digit"));
         on_pushButton_AC_clicked();
         return;
     }
@@ -134,6 +134,11 @@ void Calculator::save_first() {
 
 void Calculator::save_second() {
     second_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
+    if (invalidSymbol) {
+        QMessageBox::information(this, QString("Error!"), QString("Used invalid symbol"));
+        on_pushButton_AC_clicked();
+        return;
+    }
     if (var_sign) {
         second_var *= (-1);
     }
