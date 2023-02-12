@@ -70,7 +70,8 @@ double Calculator::make_var(int system, QString numberQstring) {
     }
 
     for (int i = startingPoint; i < number.size(); ++i) {
-        if (std::find(validDigit.begin(), (validDigit.end() - (16 - system)), number[i]) == validDigit.end()) {
+        auto pos = std::find(validDigit.begin(), validDigit.end(), number[i]);
+        if (pos - validDigit.begin() >= system) {
             invalidDigit = 1;
             return NULL;
         }
