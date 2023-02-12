@@ -11,14 +11,6 @@ Calculator::Calculator(QWidget *parent)
 }
 
 void Calculator::buttonControl() {
-    /*switch (ui->comboBox->currentText().toInt()) {
-    case 2:
-        ui->pushButton_2->setEnabled(false);
-        break;
-    case 3:
-        ui->pushButton_3->setEnabled(false);
-        break;
-    }*/
     if (ui->comboBox->currentText().toInt() > 2) ui->pushButton_2->setEnabled(true);
     else ui->pushButton_2->setEnabled(false);
     if (ui->comboBox->currentText().toInt() > 3) ui->pushButton_3->setEnabled(true);
@@ -279,7 +271,6 @@ void Calculator::on_pushButton_equal_clicked() {
         break;
     }
     ui->text_1var->setText(QString::number(answer));
-    //QMessageBox::information(this, QString("Shaseasd"), QString::number(first_var) + " " + QString::number(second_var) + " " + QString::number(answer));
     operation_type = 0;
     var_sign = 0;
     first_var = 0;
