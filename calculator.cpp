@@ -123,7 +123,7 @@ void Calculator::save_first() {
         return;
     }
     if (invalidDigit) {
-        QMessageBox::information(this, QString("Error!"), QString("Used invalid digit"));
+        QMessageBox::information(this, QString("Error!"), QString("Used invalid digit for chosen notation"));
         on_pushButton_AC_clicked();
         return;
     }
