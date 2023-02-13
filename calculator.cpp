@@ -293,7 +293,6 @@ void Calculator::on_pushButton_ChangeSign_clicked() {
 
 void Calculator::save_firstMixed() {
     int days, hours, mins, secs;
-    bool ok = true;
     if (ui->lineEdit_firstDay->text().isEmpty()) days = 0;
     else days = ui->lineEdit_firstDay->text().toInt(&ok);
     if (ui->lineEdit_firstHour->text().isEmpty()) hours = 0;
@@ -303,16 +302,11 @@ void Calculator::save_firstMixed() {
     if (ui->lineEdit_firstSec->text().isEmpty()) secs = 0;
     else secs = ui->lineEdit_firstSec->text().toInt(&ok);
 
-    if (!ok) {
-        QMessageBox::information(this, QString("Error"), QString("Invalid data! only integer numbers allowed"));
-        return;
-    }
     first_operandSeconds = secs + (mins * 60) + (hours * 60 * 60) + (days * 24 * 60 * 60);
 }
 
 void Calculator::save_secondMixed() {
     int days, hours, mins, secs;
-    bool ok = true;
     if (ui->lineEdit_secondDay->text().isEmpty()) days = 0;
     else days = ui->lineEdit_secondDay->text().toInt(&ok);
     if (ui->lineEdit_secondHour->text().isEmpty()) hours = 0;
@@ -321,16 +315,18 @@ void Calculator::save_secondMixed() {
     else mins = ui->lineEdit_secondMinute->text().toInt(&ok);
     if (ui->lineEdit_secondSec->text().isEmpty()) secs = 0;
     else secs = ui->lineEdit_secondSec->text().toInt(&ok);
-    if (!ok) {
-        QMessageBox::information(this, QString("Error"), QString("Invalid data! only integer numbers allowed"));
-        return;
-    }
+    
     second_operandSeconds = secs + (mins * 60) + (hours * 60 * 60) + (days * 24 * 60 * 60);
 }
 
 void Calculator::on_pushButton_minusMixed_clicked() {
     save_firstMixed();
     save_secondMixed();
+    if (!ok) {
+        QMessageBox::information(this, QString("Error"), QString("Invalid data! only integer numbers allowed"));
+        on_pushButton_ACMixed_clicked();
+        return;
+    }
 
     int ansSeconds = first_operandSeconds - second_operandSeconds;
     if (ansSeconds < 0) ansSeconds *= (-1);
@@ -338,9 +334,16 @@ void Calculator::on_pushButton_minusMixed_clicked() {
     showAnswer(ansSeconds);
 
 }
+
 void Calculator::on_pushButton_plusMixed_clicked() {
     save_firstMixed();
     save_secondMixed();
+
+    if (!ok) {
+        QMessageBox::information(this, QString("Error"), QString("Invalid data! only integer numbers allowed"));
+        on_pushButton_ACMixed_clicked();
+        return;
+    }
 
     int ansSeconds = first_operandSeconds + second_operandSeconds;
 
@@ -368,6 +371,7 @@ void Calculator::showAnswer(int ansSeconds) {
 void Calculator::on_pushButton_ACMixed_clicked() {
     first_operandSeconds = 0;
     second_operandSeconds = 0;
+    ok = true;
 
     ui->lineEdit_answerSec->clear();
     ui->lineEdit_answerMinute->clear();

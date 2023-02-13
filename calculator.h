@@ -43,6 +43,7 @@ private:
     int operation_type = 0; 
     int first_operandSeconds = 0;
     int second_operandSeconds = 0;
+    bool ok = true;
     //1 - сложение
     //2 - вычитание
     //3 - умножение
