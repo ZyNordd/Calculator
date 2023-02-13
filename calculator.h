@@ -24,6 +24,9 @@ private:
     double make_var(int system, QString number);
     void save_first();
     void save_second();
+
+    void save_firstMixed();
+    void save_secondMixed();
     bool var_sign = 0;
     bool invalidDigit = 0;
     bool invalidSymbol = 0;
@@ -37,6 +40,8 @@ private:
     const std::vector<char> validValues = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
         'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F' };
     int operation_type = 0; 
+    int first_operandSeconds = 0;
+    int second_operandSeconds = 0;
     //1 - сложение
     //2 - вычитание
     //3 - умножение
@@ -70,5 +75,8 @@ private slots:
     void on_pushButton_point_clicked();
     void on_pushButton_equal_clicked();
     void on_pushButton_ChangeSign_clicked();
+    void on_pushButton_minusMixed_clicked();
+    void on_pushButton_plusMixed_clicked();
+    void on_pushButton_ACMixed_clicked();
 };
 #endif // CALCULATOR_H
