@@ -25,6 +25,7 @@ private:
     void save_first();
     void save_second();
 
+    void showAnswer(int ansSeconds);
     void save_firstMixed();
     void save_secondMixed();
     bool var_sign = 0;

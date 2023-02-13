@@ -292,18 +292,96 @@ void Calculator::on_pushButton_ChangeSign_clicked() {
 }
 
 void Calculator::save_firstMixed() {
+    int days, hours, mins, secs;
+    bool ok = true;
+    if (ui->lineEdit_firstDay->text().isEmpty()) days = 0;
+    else days = ui->lineEdit_firstDay->text().toInt(&ok);
+    if (ui->lineEdit_firstHour->text().isEmpty()) hours = 0;
+    else hours = ui->lineEdit_firstHour->text().toInt(&ok);
+    if (ui->lineEdit_firstMinute->text().isEmpty()) mins = 0;
+    else mins = ui->lineEdit_firstMinute->text().toInt(&ok);
+    if (ui->lineEdit_firstSec->text().isEmpty()) secs = 0;
+    else secs = ui->lineEdit_firstSec->text().toInt(&ok);
 
+    if (!ok) {
+        QMessageBox::information(this, QString("Error"), QString("Invalid data! only integer numbers allowed"));
+        return;
+    }
+    first_operandSeconds = secs + (mins * 60) + (hours * 60 * 60) + (days * 24 * 60 * 60);
 }
 
 void Calculator::save_secondMixed() {
-
+    int days, hours, mins, secs;
+    bool ok = true;
+    if (ui->lineEdit_secondDay->text().isEmpty()) days = 0;
+    else days = ui->lineEdit_secondDay->text().toInt(&ok);
+    if (ui->lineEdit_secondHour->text().isEmpty()) hours = 0;
+    else hours = ui->lineEdit_secondHour->text().toInt(&ok);
+    if (ui->lineEdit_secondMinute->text().isEmpty()) mins = 0;
+    else mins = ui->lineEdit_secondMinute->text().toInt(&ok);
+    if (ui->lineEdit_secondSec->text().isEmpty()) secs = 0;
+    else secs = ui->lineEdit_secondSec->text().toInt(&ok);
+    if (!ok) {
+        QMessageBox::information(this, QString("Error"), QString("Invalid data! only integer numbers allowed"));
+        return;
+    }
+    second_operandSeconds = secs + (mins * 60) + (hours * 60 * 60) + (days * 24 * 60 * 60);
 }
 
 void Calculator::on_pushButton_minusMixed_clicked() {
+    save_firstMixed();
+    save_secondMixed();
+
+    int ansSeconds = first_operandSeconds - second_operandSeconds;
+    if (ansSeconds < 0) ansSeconds *= (-1);
+
+    showAnswer(ansSeconds);
+
 }
 void Calculator::on_pushButton_plusMixed_clicked() {
+    save_firstMixed();
+    save_secondMixed();
+
+    int ansSeconds = first_operandSeconds + second_operandSeconds;
+
+    showAnswer(ansSeconds);
+
+    
+
 }
 
+void Calculator::showAnswer(int ansSeconds) {
+    
+    int ansMinutes = ansSeconds / 60;
+    ansSeconds = ansSeconds % 60;
+    int ansHours = ansMinutes / 60;
+    ansMinutes = ansMinutes % 60;
+    int ansDays = ansHours / 24;
+    ansHours = ansHours % 24;
+
+    ui->lineEdit_answerSec->setText(QString::number(ansSeconds));
+    ui->lineEdit_answerMinute->setText(QString::number(ansMinutes));
+    ui->lineEdit_answerHour->setText(QString::number(ansHours));
+    ui->lineEdit_answerDay->setText(QString::number(ansDays));
+}
 
 void Calculator::on_pushButton_ACMixed_clicked() {
+    first_operandSeconds = 0;
+    second_operandSeconds = 0;
+
+    ui->lineEdit_answerSec->clear();
+    ui->lineEdit_answerMinute->clear();
+    ui->lineEdit_answerHour->clear();
+    ui->lineEdit_answerDay->clear();
+
+    ui->lineEdit_firstSec->clear();
+    ui->lineEdit_firstMinute->clear();
+    ui->lineEdit_firstHour->clear();
+    ui->lineEdit_firstDay->clear();
+
+    ui->lineEdit_secondSec->clear();
+    ui->lineEdit_secondMinute->clear();
+    ui->lineEdit_secondHour->clear();
+    ui->lineEdit_secondDay->clear();
+
 }
