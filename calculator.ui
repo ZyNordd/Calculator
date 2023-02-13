@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>445</width>
-    <height>784</height>
+    <width>823</width>
+    <height>791</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -26,7 +26,7 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QGridLayout" name="gridLayout_3">
+   <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
@@ -41,8 +41,20 @@
        <attribute name="title">
         <string>Калькулятор</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="2" column="0" colspan="2">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Выберите систему счисления:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
          <layout class="QGridLayout" name="gridLayout">
           <item row="7" column="0">
            <widget class="QPushButton" name="pushButton_0">
@@ -605,18 +617,6 @@
           </item>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label">
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Выберите систему счисления:</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0" colspan="2">
          <widget class="QLineEdit" name="text_1var">
           <property name="font">
@@ -635,173 +635,173 @@
        <attribute name="title">
         <string>Смешанная система</string>
        </attribute>
-       <widget class="QWidget" name="gridLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>390</width>
-          <height>405</height>
-         </rect>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_4">
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_secondDay">
-           <property name="text">
-            <string>Дни</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLabel" name="label_secondHour">
-           <property name="text">
-            <string>Часы</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLineEdit" name="lineEdit_firstDay"/>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLineEdit" name="lineEdit_secondDay"/>
-         </item>
-         <item row="6" column="2">
-          <widget class="QLabel" name="label_secondMinute">
-           <property name="text">
-            <string>Минуты</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1" colspan="2">
-          <widget class="QPushButton" name="pushButton_operatorSwaper">
-           <property name="text">
-            <string>+</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="4">
-          <widget class="QLabel" name="label_firstMixVar">
-           <property name="text">
-            <string>Первая переменная</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLabel" name="label_firstHour">
-           <property name="text">
-            <string>Часы</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLabel" name="label_answerDay">
-           <property name="text">
-            <string>Дни</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="2">
-          <widget class="QLineEdit" name="lineEdit_answerMinute"/>
-         </item>
-         <item row="10" column="2">
-          <widget class="QLabel" name="label_answerMinute">
-           <property name="text">
-            <string>Минуты</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_firstHour"/>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLineEdit" name="lineEdit_answerDay"/>
-         </item>
-         <item row="5" column="3">
-          <widget class="QLineEdit" name="lineEdit_secondSec"/>
-         </item>
-         <item row="9" column="3">
-          <widget class="QLineEdit" name="lineEdit_answerSec"/>
-         </item>
-         <item row="5" column="2">
-          <widget class="QLineEdit" name="lineEdit_secondMinute"/>
-         </item>
-         <item row="2" column="2">
-          <widget class="QLabel" name="label_firstMinute">
-           <property name="text">
-            <string>Минуты</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="1">
-          <widget class="QLabel" name="label_answerHour">
-           <property name="text">
-            <string>Часы</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_firstDay">
-           <property name="text">
-            <string>Дни</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="3">
-          <widget class="QLabel" name="label_answerSec">
-           <property name="text">
-            <string>Секунды</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="lineEdit_secondHour"/>
-         </item>
-         <item row="6" column="3">
-          <widget class="QLabel" name="label_secondSec">
-           <property name="text">
-            <string>Секунды</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0" colspan="4">
-          <widget class="QLabel" name="label_secondVar">
-           <property name="text">
-            <string>Вторая переменная</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QLineEdit" name="lineEdit_firstSec"/>
-         </item>
-         <item row="7" column="0" colspan="4">
-          <widget class="QPushButton" name="pushButton">
-           <property name="text">
-            <string>=</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QLabel" name="label_firstSec">
-           <property name="text">
-            <string>Секунды</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QLineEdit" name="lineEdit_firstMinute"/>
-         </item>
-         <item row="9" column="1">
-          <widget class="QLineEdit" name="lineEdit_answerHour"/>
-         </item>
-         <item row="8" column="0" colspan="4">
-          <widget class="QLabel" name="label_answer">
-           <property name="text">
-            <string>Ответ</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0" colspan="4">
+         <widget class="QLabel" name="label_firstMixVar">
+          <property name="text">
+           <string>Первая переменная</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="lineEdit_firstDay"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEdit_firstHour"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLineEdit" name="lineEdit_firstMinute"/>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="lineEdit_firstSec"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_firstDay">
+          <property name="text">
+           <string>Дни</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="label_firstHour">
+          <property name="text">
+           <string>Часы</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label_firstMinute">
+          <property name="text">
+           <string>Минуты</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLabel" name="label_firstSec">
+          <property name="text">
+           <string>Секунды</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="2">
+         <widget class="QPushButton" name="pushButton_operatorSwaper">
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="4">
+         <widget class="QLabel" name="label_secondVar">
+          <property name="text">
+           <string>Вторая переменная</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLineEdit" name="lineEdit_secondDay"/>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="lineEdit_secondHour"/>
+        </item>
+        <item row="5" column="2">
+         <widget class="QLineEdit" name="lineEdit_secondMinute"/>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLineEdit" name="lineEdit_secondSec"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_secondDay">
+          <property name="text">
+           <string>Дни</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="label_secondHour">
+          <property name="text">
+           <string>Часы</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="2">
+         <widget class="QLabel" name="label_secondMinute">
+          <property name="text">
+           <string>Минуты</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3">
+         <widget class="QLabel" name="label_secondSec">
+          <property name="text">
+           <string>Секунды</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="4">
+         <widget class="QPushButton" name="pushButton">
+          <property name="font">
+           <font>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0" colspan="4">
+         <widget class="QLabel" name="label_answer">
+          <property name="text">
+           <string>Ответ</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLineEdit" name="lineEdit_answerDay"/>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLineEdit" name="lineEdit_answerHour"/>
+        </item>
+        <item row="9" column="2">
+         <widget class="QLineEdit" name="lineEdit_answerMinute"/>
+        </item>
+        <item row="9" column="3">
+         <widget class="QLineEdit" name="lineEdit_answerSec"/>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_answerDay">
+          <property name="text">
+           <string>Дни</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLabel" name="label_answerHour">
+          <property name="text">
+           <string>Часы</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="2">
+         <widget class="QLabel" name="label_answerMinute">
+          <property name="text">
+           <string>Минуты</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="3">
+         <widget class="QLabel" name="label_answerSec">
+          <property name="text">
+           <string>Секунды</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -812,7 +812,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>445</width>
+     <width>823</width>
      <height>26</height>
     </rect>
    </property>
