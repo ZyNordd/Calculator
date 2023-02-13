@@ -107,7 +107,6 @@ double Calculator::make_var(int system, QString numberQstring) {
 }
 
 void Calculator::save_first() {
-    
     first_var = make_var(ui->comboBox->currentText().toInt(), ui->text_1var->text());
     if (invalidSymbol) {
         QMessageBox::information(this, QString("Error!"), QString("Used invalid symbol"));
@@ -292,7 +291,7 @@ void Calculator::on_pushButton_ChangeSign_clicked() {
 }
 
 void Calculator::save_firstMixed() {
-    int days, hours, mins, secs;
+    int64_t days, hours, mins, secs;
     if (ui->lineEdit_firstDay->text().isEmpty()) days = 0;
     else days = ui->lineEdit_firstDay->text().toInt(&ok);
     if (ui->lineEdit_firstHour->text().isEmpty()) hours = 0;
@@ -306,7 +305,7 @@ void Calculator::save_firstMixed() {
 }
 
 void Calculator::save_secondMixed() {
-    int days, hours, mins, secs;
+    int64_t days, hours, mins, secs;
     if (ui->lineEdit_secondDay->text().isEmpty()) days = 0;
     else days = ui->lineEdit_secondDay->text().toInt(&ok);
     if (ui->lineEdit_secondHour->text().isEmpty()) hours = 0;
@@ -328,11 +327,10 @@ void Calculator::on_pushButton_minusMixed_clicked() {
         return;
     }
 
-    int ansSeconds = first_operandSeconds - second_operandSeconds;
+    int64_t ansSeconds = first_operandSeconds - second_operandSeconds;
     if (ansSeconds < 0) ansSeconds *= (-1);
 
     showAnswer(ansSeconds);
-
 }
 
 void Calculator::on_pushButton_plusMixed_clicked() {
@@ -345,24 +343,21 @@ void Calculator::on_pushButton_plusMixed_clicked() {
         return;
     }
 
-    int ansSeconds = first_operandSeconds + second_operandSeconds;
+    int64_t ansSeconds = first_operandSeconds + second_operandSeconds;
 
     showAnswer(ansSeconds);
-
-    
-
 }
 
-void Calculator::showAnswer(int ansSeconds) {
-    
-    int ansMinutes = ansSeconds / 60;
-    ansSeconds = ansSeconds % 60;
-    int ansHours = ansMinutes / 60;
+void Calculator::showAnswer(int64_t ansSeconds)  {
+    int64_t ansSecs = ansSeconds;
+    int64_t ansMinutes = ansSecs / 60;
+    ansSecs = ansSecs % 60;
+    int64_t ansHours = ansMinutes / 60;
     ansMinutes = ansMinutes % 60;
-    int ansDays = ansHours / 24;
+    int64_t ansDays = ansHours / 24;
     ansHours = ansHours % 24;
 
-    ui->lineEdit_answerSec->setText(QString::number(ansSeconds));
+    ui->lineEdit_answerSec->setText(QString::number(ansSecs));
     ui->lineEdit_answerMinute->setText(QString::number(ansMinutes));
     ui->lineEdit_answerHour->setText(QString::number(ansHours));
     ui->lineEdit_answerDay->setText(QString::number(ansDays));
@@ -387,5 +382,4 @@ void Calculator::on_pushButton_ACMixed_clicked() {
     ui->lineEdit_secondMinute->clear();
     ui->lineEdit_secondHour->clear();
     ui->lineEdit_secondDay->clear();
-
 }

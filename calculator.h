@@ -25,7 +25,7 @@ private:
     void save_first();
     void save_second();
 
-    void showAnswer(int ansSeconds);
+    void showAnswer(int64_t ansSeconds);
     void save_firstMixed();
     void save_secondMixed();
     bool var_sign = 0;
@@ -41,8 +41,8 @@ private:
     const std::vector<char> validValues = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
         'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F' };
     int operation_type = 0; 
-    int first_operandSeconds = 0;
-    int second_operandSeconds = 0;
+    int64_t first_operandSeconds = 0;
+    int64_t second_operandSeconds = 0;
     bool ok = true;
     //1 - сложение
     //2 - вычитание

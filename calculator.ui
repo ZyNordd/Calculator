@@ -38,7 +38,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -635,6 +635,12 @@
        </layout>
       </widget>
       <widget class="QWidget" name="tab_2">
+       <property name="font">
+        <font>
+         <family>Sylfaen</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <attribute name="title">
         <string>Смешанная система</string>
        </attribute>
@@ -649,6 +655,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -664,6 +671,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -691,6 +699,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -718,6 +727,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -745,6 +755,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -760,6 +771,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>21</pointsize>
            </font>
           </property>
@@ -781,6 +793,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -796,6 +809,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -811,6 +825,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>20</pointsize>
            </font>
           </property>
@@ -829,6 +844,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>21</pointsize>
            </font>
           </property>
@@ -850,6 +866,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -865,6 +882,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -892,6 +910,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -907,6 +926,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -922,6 +942,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -937,6 +958,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -964,6 +986,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>20</pointsize>
            </font>
           </property>
@@ -982,6 +1005,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1009,6 +1033,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1036,6 +1061,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -1051,6 +1077,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1078,6 +1105,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -1093,6 +1121,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1120,6 +1149,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1147,6 +1177,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1174,6 +1205,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>13</pointsize>
            </font>
           </property>
@@ -1201,6 +1233,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -1216,6 +1249,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>21</pointsize>
            </font>
           </property>
@@ -1237,6 +1271,7 @@
           </property>
           <property name="font">
            <font>
+            <family>Sylfaen</family>
             <pointsize>16</pointsize>
            </font>
           </property>
@@ -1252,7 +1287,8 @@
           </property>
           <property name="font">
            <font>
-            <pointsize>20</pointsize>
+            <family>Sylfaen</family>
+            <pointsize>24</pointsize>
            </font>
           </property>
           <property name="text">
