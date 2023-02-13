@@ -290,3 +290,20 @@ void Calculator::on_pushButton_ChangeSign_clicked() {
         var_sign = 0;
     }
 }
+
+void Calculator::save_firstMixed() {
+
+}
+
+void Calculator::save_secondMixed() {
+
+}
+
+void Calculator::on_pushButton_minusMixed_clicked() {
+}
+void Calculator::on_pushButton_plusMixed_clicked() {
+}
+
+
+void Calculator::on_pushButton_ACMixed_clicked() {
+}
